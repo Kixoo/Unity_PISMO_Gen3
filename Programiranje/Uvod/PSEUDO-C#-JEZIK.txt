@@ -474,12 +474,65 @@ npr.
 
 private int broj = 8; jednako kao i "int broj = 8;"
 
+Zadatak 1.
+
+Napišite skriptu gdje možete dva broja zbarajti. Vrijednosti brojeva su javne pa se vide u inspectoru. Rezultat se ispisuje u konzoli.
+
+public int a = 1;
+public int b = 2;
+int c;
+
+void Start()
+{
+	c = a + b;
+	Debug.Log("broj jedan " + a + " i " + " broj dva " + " su broj " + c);
+}
 
 
+Zadatak 2.
+
+Napišite skriptu gdje se zbaraju dva javna broja. Ako je zbroj brojeva veci od 15 onda neka javni bool "banana" postane true, a ako je manji da bude false
 
 
+public int x = 3;
+public int y = 5;
+int z;
+public bool banana;
+
+void Start()
+{
+	z = x + y;
+	if(z > 15)
+	{
+		banana = true;
+	}
+	else if(z < 15)
+	{
+		banana = false;
+	}
+}
 
 
+NOVO - FOR PETLJA (DOK)
+
+for(int i = 0; uvijet; i++)
+{
+	naredba;
+}
+
+npr.
+
+int broj_enemya = 3;
+Metoda Start:
+for(int i = 0; i < broj_enemya; i++)
+{
+	Debug.Log("Stvoren je " + i + ". enemy!");
+}
+
+
+for => dok je uvijet zadovoljen obavljaj naredbe
+int i => brojač, nemora se zvati i, može kako želite, najčšće je i
+uvijet => uvijet koji se zadovoljava
 
 
 
