@@ -515,7 +515,7 @@ void Start()
 
 NOVO - FOR PETLJA (DOK)
 
-for(int i = 0; uvijet; i++)
+for(int i = 0; uvijet; inkrement)
 {
 	naredba;
 }
@@ -533,11 +533,57 @@ for(int i = 0; i < broj_enemya; i++)
 for => dok je uvijet zadovoljen obavljaj naredbe
 int i => brojač, nemora se zvati i, može kako želite, najčšće je i
 uvijet => uvijet koji se zadovoljava
+inkrement => utječe na brojač, uvijet s kojim djelujemo na brojač
 
 
 
+1. Zadatak za for petlju.
+Napravite skriptu koja ima 3 if uvijeta. Svaki uvijet je definiran bool-om. 1. bool se zove easy, 2. normal, a 3. hard.
+a) ako je svaki bool false u početku, neka bool "normal" postane true
+b) za uvijet easy neka je broj enemya 5 i tako nek je varijabla definirana prije samog početka. Odnosno u 0-tom frameu.
+c) ako je uvijet igre "normal" onda neka je broj enemya za 3 puta veći od easy načinu
+d) ako je uvijet igre "hard" onda neka je broj enemya za 2 puta veći nego u normal načinu
+e) Nakon što se provjeri koji je mod, neka se ispiše stvaranje svakog enemya s njegovim rednim brojem kao i u primjeru za for petlju:
+Debug.Log("Stvoren je " + i + ". enemy!");
 
 
+public bool easy;
+public bool normal;
+public bool hard;
+int broj_enemya;
+
+void Awake()
+{
+	broj_enemya = 5;
+
+	if(easy == false && normal == false && hard == false)
+	{
+		normal = true;
+	}
+}
+
+void Start()
+{
+	if(easy == true)
+	{
+		broj_enemya = broj_enemya;
+	}
+
+	else if(normal == true)
+	{
+		broj_enemya = broj_enemya * 3;
+	}
+	
+	else if(hard == true)
+	{
+		broj_enemya = broj_enemya * 6;
+	}
+
+	for(int i = 0; i < broj_enemya; i++)
+	{
+		Debug.Log("Stvoren je " + i + ". enemy!");
+	}
+}
 
 
 
