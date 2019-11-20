@@ -1,0 +1,497 @@
+UVOD U PSEUDO-C#-JEZIK
+
+varijabla - mjesto u memoriji rezervirano za pohranu podataka
+
+int - cijeli brojevi (4, 69, 420, 50000000000)
+float - decimalni brojevi ( 6.9, 9.11, 4.0)
+napomena za float, nakon broja morate napisati slovo "f", npr.
+4.0f, 6.9f, -18.9453234f
+
+int x = 5
+x = x + 1
+x += 2
+
+točka zarez ";" se piše na kraju svake linije naredbe
+
+float x = 5.68f;
+int y = 4;
+float z = 0;
+z = x + y;
+
+int x;
+(x je ustvari "null" je brojčano nula 0)
+
+GC = Garbage Collection
+
+1. zadatak zbroji x i y ako je x 5, a y 8.
+
+int x = 5;
+int y = 8;
+int z = x + y;
+
+MATEMATIČKI
+5 + 8 = 13
+PROGRAMSKI
+13 = 5 + 8;
+
+2. zadatak kolika je razlika ako je x 19, a y je 7.5? Razliku zapišite u x.
+
+float x = 19f;
+float y = 7.5f;
+x = x - y; 
+(mogli smo napisati: x-= y;)
+
+3. Zadatak, programski napišite ovaj matematički zapis: 
+9 + 11 = 20
+
+int x = 9;
+int y = 11;
+int z = x + y;
+
+4. Zadatak, programski napišite ovaj matematički zapis: 
+9.11 + 4.20 = z
+
+float mama = 9.11f;
+float tata = 4.20f;
+float z = mama + tata;
+
+NAZIVI METODA
+metoda 
+- skup naredbi koje se trebaju dogoditi u određenim uvijetima
+- Svaka metoda ima svoje uvijete
+
+ključne metode u Unityu
+- Awake - odvija se u 0 (nultom frameu, awake metoda se događa prije stvaranja objekata na sceni, AKO JE SKRIPTA UGAŠENA DA NE RADI, AWAKE METODA ĆE SE SVEJEDNO IZVRŠITI)
+
+- Start - izvršava se na prvom frameu i samo jedanput
+
+- Update - svaki frame jedan put (dakle 60 FPS - 59 puta se odvrti)
+
+5. Zadatak U startu neka se zbroje 2 broja.
+
+int x = 5;
+int y = 10;
+int z;
+
+void Start()
+{
+	z = x + y;
+}
+
+6. Zadatak zbrojite u startu x koji je 17.2 i y koji je 12.32, u varijablu "maška"
+
+float x = 17.2f;
+float y = 12.32f;
+float maška;
+
+void Start()
+{
+	maška = x + y;
+}
+
+7. Zadatak, povećavajte x koji je 5 za 5 svaki frame.
+
+int x = 5;
+
+void Update()
+{
+	 x += 5;
+}
+
+Zadatak 8. Neka je x 6 , a y je 7 i njihov zbroj neka se izracuna u startu, a onda svaki frame neka se rezultat uveca za x podjeljeno sa 2.
+
+int x = 6;
+int y = 7;
+int rezultat;
+int pod;
+
+void Start()
+{
+	rezulatat = x + y;
+	pod = x / 2;
+}
+
+void Update()
+{
+	rezultat += pod;
+}
+
+
+Zadatak 9.
+Ako je x vrijednost -3.6, a y vrijednost je 10 koliki je njihov zbroj u startu? Neka svaki frame rezultat raste za umnožak x i y.
+
+float x = -3.6f;
+int y = 10; (može biti i: float y = 10f;)
+float zbroj;
+float umnozak;
+
+void Start()
+{
+	zbroj = x + y;
+	umnozak = x * y;
+}
+
+void Update()
+{
+	zbroj += umnozak;
+}
+
+UVIJETI:
+
+Što su uvijeti?
+Uvijet je skup riječi koje govore što se treba ispuniti kako bi se izvršio red naredbi (metoda)
+
+Primjeri uvijeta:
+AKO - if
+KADA - when (NE)
+DOK - while
+
+Kada će se zadovoljiti ako uvijet?
+U uvjetima koristima 2 znaka npr. ==, <=, != itd.
+== jednako je
+!= različito je
+|| ili
+&& i
+
+if(1+1 == 2) - DA
+if(2+3 != 4) - DA
+if(18 > 19) - NE
+if(21 <= 21) - DA
+if(21 > 22 || 22 > 13) - DA
+
+if(istina || laž) - Istina
+if(istina || istina) - Istina
+if(laž || istina) - Istina
+if(laž || laž) - Laž
+if(istina && istina) - Istina
+if(istina && laž) - Laž
+
+Zadatak 11. x je veličine 8, a y je veličine 13, ako je njihov zbroj manji od 50 neka se x poveća za samoga sebe i tako sve dok je zbroj manji od 50
+
+int x = 8;
+int y = 13;
+
+void Update()
+{
+	if(x+y < 50)
+	{
+		x += x;
+	}
+}
+
+Zadatak 12. Neka je početna vrijednost health 100, neka svaki frame gubimo za 0.01 healtha osim kada nam health padne ispod 10, onda počnemo gubiti health za 0.02.
+
+float health = 100f;
+float damage = 0.01f;
+
+void Update()
+{
+	if(health < 10)
+	{
+		damage = 0.02f;
+	}
+
+	health -= damage;
+}
+
+
+
+zadatak 13. Jesmo li mogli otići u minus sa healthom?
+DA
+
+Zadatak 14. Kada je health 0 ili manje neka se ispiše poruka u konzoli "Umro si!"
+ISPITIVANJE IDE "Debug" - prikazuje detaljnije kada što i kako
+
+float health = 100f;
+float damage = 0.01f;
+
+void Update()
+{
+	if(health >= 10)
+	{
+		damage = 0.01f;
+	}
+
+	else if(health < 10)
+	{
+		damage = 0.02f;
+	}
+
+	if(health <= 0)
+	{
+		Debug.Log("Umro si!");
+		damage = 0;
+	}
+
+	health -= damage;
+}
+
+
+Zadatak 13. Pretvorite u programski zapis
+(15 - 12) = x
+ako je x > 100 onda x / 3.5
+ali ako je x <= 100 onda x * 2
+Ponavljati ako uvijete dok se jedan od njih ne zadovolji (dakle svaki frame)
+
+float x;
+
+void Start()
+{
+	x = 15 - 12;
+}
+
+void Update()
+{
+	if(x > 100)
+	{
+		x = x / 3.5f;
+	}
+
+	else
+	{
+		x = x * 2;
+	}
+}
+
+if - ako uvijet koji se prvi gleda u nizu, ako je više if if uvijeta onda se gledaju po linijskom zapisu i prestaju gledati kada se prvi od njih zadovolji
+
+npr.
+if(laž)
+if(laž && laž)
+if(istina) - tek ovaj se gleda
+
+else if - ako je ispred njega if koji nije zadovoljen onda će se ovaj gledati, koristi else if ako imate 3 ili više if uvijeta
+
+npr.
+
+if(laž)
+else if(istina && laž)
+else if(istina) - ovaj se izvršava
+
+
+else - zadnji u nizu if-ova može biti drugi ili stoti nije bitno, bitno je da je zadnji u zapisu
+
+npr.
+
+if(laž)
+else if(laž)
+else - automatski istina
+
+npr 2.
+if(laž)
+else - automatski istina
+
+NOVA VARIJABLA:
+
+bool
+
+bool ima dva moguća zapisa a to su "true" i "false"
+
+zadatk 14. Ako je 2+3 > 4 onda neka je bool točan.
+
+(kada bool ostavimo prazno on je null, ali kada je bool null onda je false)
+
+bool provjera; 
+
+void Start()
+{
+	if(2+3 > 4)
+	{
+		provjera = true;
+	}
+}
+
+FAR CRY 3 
+2.000.000 - 5.000.000
+19.99$
+
+
+
+SCUM
+1.000.000 - 2.000.000
+19.99$
+
+POTTERY
+VOODOO
+
+RAID
+LION GAME LION
+
+PONAVLJANJE
+
+1. Zadatak. Napišite programski matematičku jednadžbu: 5+2=x
+
+int y = 5;
+int mama = 2;
+int x = y + mama;
+
+2. Zadatak. Napišite programski matematičku jednadžbu: (5+7) * 3.27 / 8 + 11 = x
+
+float x = (5+7) * 3.27f / 8 + 11;
+
+3. Zadatak napišite programski matematičke jednadžbe: 
+5 * 4 + 2.1 = x
+6.9 / 9.6 * x2(na kvadrat) = y
+y + x = z
+
+float x = 5 * 4 + 2.1f;
+float y = 6.9f / 9.6f * (x * x);
+float z = y + x;
+
+4. Zadatak. Ako je x koji je 17 pomnožen sa y koji je 9, veće od 922 onda neka je bool "kill" istinit
+
+int x = 17;
+int y = 9;
+bool kill = false; (bool kill;)
+
+void Start()
+{
+	if(x * y > 922)
+	{
+		kill = true;
+	}
+}
+
+
+5. Ako je x koji je 9.2 uvećan za y koji 
+je 5 * (8.2 - 11 * 2.11) manji od 133 onda neka x raste za svaki frame za 11.
+
+float x = 9.2f;
+float y = 5 * (8.2f - 11 * 2.11f);
+float r = 133;
+
+void Update()
+{
+	if(x + y < r)
+	{
+		x += 11;
+	}
+}
+
+6. Zadatak. Imate varijablu health koja krece od 100, svakih 5 frameova se regenerira za 0.5 healtha kada postane manji od 100. Health ne smije biti veći od 100. U startu oduzmite health za broj vaših godina.
+
+float health = 100;
+int frame_count = 0;
+int broj_godina = 19;
+
+void Start()
+{
+	health -= broj_godina;
+}
+
+void Update()
+{
+	if(health <= 99.5f)
+	{
+		if(frame_count < 5)
+		{
+			frame_count++; 
+			(++ znaci povecaj za jedan)
+		}
+		else if(frame_count == 5)
+		{
+			health += 0.5f;
+			frame_count = 0;
+		}
+	
+	}
+}
+
+7. Zadatak. Ispišite u konzoli tekst: "Ovo je " + vrsta metode:
+a) Awake
+b) Start
+c) Update
+
+void Awake()
+{
+	Debug.Log("Ovo je Awake");
+}
+
+void Start()
+{
+	Debug.Log("Ovo je Start");
+}
+
+void Update()
+{
+	Debug.Log("Ovo je Update");
+}
+
+
+
+8. Zadatak. Nadogradite skriptu iz zadatka 7. tako da definirate varijablu koja krece od 0, te se u svakoj metodi povecava za 1.
+
+int x = 0;
+
+void Awake()
+{
+	Debug.Log("Ovo je Awake");
+	x++;
+}
+
+void Start()
+{
+	Debug.Log("Ovo je Start");
+	x++;
+}
+
+void Update()
+{
+	Debug.Log("Ovo je Update");
+	x++;
+}
+
+
+
+9. Zadatak. Napišite skriptu koja će izračunati umnožak 2 broja te ispisati njihovu vrijednost u konzoli sa tekstom "Umnožak 'broj 1' i 'broj 2' je 'rezultat'"
+
+int x = 4;
+int y = 5;
+int z;
+
+void Start()
+{
+	z = x * y;
+	Debug.Log("Umnožak " + x + " i " + y + " je " + z);
+}
+
+
+NASTAVAK PSEUDO C#
+
+U unityu postoji mogućnost mjenjanja varijabli bez otvaranja koda.
+Taj dio se nalazi u tabu inspector.
+Kako bi se mogli pristupati varijablama i u inspectoru i iz drugih scripti koristimo sljedeće:
+
+"public" vrsta_varijable naziv_varijable = vrijednost;
+npr.
+
+public int broj = 8;
+
+za zaključano da se ne može pristupati:
+
+"private" vrsta_varijable naziv_varijable = vrijednost;
+npr. 
+
+private int broj = 8; jednako kao i "int broj = 8;"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
