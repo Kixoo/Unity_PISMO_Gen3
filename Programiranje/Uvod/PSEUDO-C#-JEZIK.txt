@@ -938,8 +938,36 @@ void Start()
 }
 
 
+NOVA VRSTA VARIJABLE:
 
 
+string
+
+string je tekstualni zapis, mogu se zapisivati riječi, slova, brojevi
+
+npr.
+
+string ime = "Pero";
+string prezime = "Perić";
+string datum_rodenja = "19.1.2011";
+string visina = "189 cm";
+
+Zadatak 1.
+
+Napišite skriptu koja će igraču omogućiti da upiše vrijednosti za svoje ime, prezime, godine, visinu, te grad iz kojeg dolazi. A u metodi start u konzoli ispisati sve njegove unešene inforamcije. npr. 
+("Ja sam Marko Marić. Imam 28 godina, te sam visok 169 cm i dolazim iz Špičkovine!")
+
+
+public string ime;
+public string prezime;
+public int godine;
+public int visina;
+public string grad;
+
+void Start()
+{
+	Debug.Log("Ja sam " + ime + " " + prezime + ". Imam " + godine + " godina, te sam visok " + visina + " cm i dolazim iz " + grad + "!");
+}
 
 
 
