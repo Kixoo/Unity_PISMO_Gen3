@@ -513,7 +513,7 @@ void Start()
 }
 
 
-NOVO - FOR PETLJA (DOK)
+NOVO - FOR PETLJA (ZA)
 
 for(int i = 0; uvijet; inkrement)
 {
@@ -585,6 +585,357 @@ void Start()
 	}
 }
 
+NASTAVAK - PONAVLJANJE
+
+Kakav zapis ide u vrstu varijable int?
+
+Cijeli broj npr. 1 
+
+Kakav zapis ide u vrstu varijable float?
+
+Decimalni brojevi npr. 2.5f
+
+Kakav zapis ide u vrstu varijable bool?
+
+Istina ili laž npr. false
+
+Ako je int osavljen prazan, vrijednost mu je?
+
+Null odnosno 0
+
+Ako je bool ostavljen prazan, vrijednost mu je?
+
+Netočno, odnosno false
+
+Zadatak. 1. Napišite programski matematički zapis:
+5 * (22 - 11) / 8 = x
+9 * 7 * x / z = y
+x * 88 - 111 = z
+
+float x;
+float y;
+float z;
+
+void Start()
+{
+	x = 5 * (22 - 11) / 8;
+	z = x * 88 - 111;
+	y = 9 * 7 * x / z;
+}
+
+
+Koja je razlika između 3 standardne Unity metode: 
+a) Awake
+b) Start
+c) Update
+
+Awake se odvija u 0-tom frameu, prije stvaranja objekata na sceni
+Start se odvija u prvom frameu, u njemu se stvaranju objekti
+Update se odvija svaki frame, primjer lošeg korištenja metode - movement gdje se uspoređuje fps između dva uređaja..., primjer dobrog korištenja metoda - čekanje na playerov input (na korisnikovu interakciju sa periferijom računala/uređaja)
+
+Zadatak 2. 
+Prepišite skriptu i prepravite greške:
+
+int x = 11;
+float n M = 2.4f;
+
+void Start
+{
+	z = n M * 2.5f - x;
+}
+
+
+________ Ispravak _______
+
+int x = 11;
+float n_M = 2.4f;
+float z;
+
+void Start()
+{
+	z = n_M * 2.5f - x;
+}
+
+Zadatak 3. 
+Prepišite skriptu i prepravite greške:
+
+float X_X = 67f;
+public float xD;
+private float c_N = 99.54321f:
+
+void Update()
+{
+	if(X_X * xD - cN >= 69.22 * 2;
+	[
+		X_X -- 19;
+		xD *= 1.2f;
+		c_M -= 1.1f;
+	]
+
+
+
+________ Ispravak _______
+
+
+float X_X = 67f;
+public float xD;
+private float c_N = 99.54321f;
+
+void Update()
+{
+	if(X_X * xD - c_N >= 69.22f * 2)
+	{
+		X_X -= 19;
+		xD *= 1.2f;
+		c_N -= 1.1f;
+	}
+}
+
+
+
+Zadatak 4. 
+Prepišite skriptu i prepravite greške:
+
+
+boll marmun = false;
+int x = 11;
+int z = 12;
+int y;
+
+void Start()
+{
+	if(x / 11 & z - 12 = 1)
+	{
+		marmun = true;
+		y = z * x;
+	}
+}
+
+void update()
+{
+	y = y * z * x:
+}
+
+
+________ Ispravak _______
+
+
+bool marmun = false;
+int x = 11;
+int z = 13;
+int y;
+
+void Start()
+{
+	if(x / 11 && z - 12 == 1)
+	{
+		marmun = true;
+		y = z * x;
+	}
+}
+
+void Update()
+{
+	y = y * z * x;
+}
+
+NOVO - C# PSEUDO
+
+nova vrsta varijable
+var - vrsta varijbale koja je ne definirana, odnosno prilagođava se unosu
+npr.
+int x = 11;
+float y = 1.12f;
+
+var z = x * y;
+
+NOVA VRSTA PETLJE "while" (dok petlja)
+
+odvija se sve dok je tvrdnja točna!
+OPASNA ZA UNITY! - ako je napisana krivo, ruši (crash) Unity, ali ne samo Unity nego u gorim situacijama može izbrisati dio projekta i/ili ugasiti i računalo
+
+Kako se piše while:
+
+while(uvijet)
+{
+	naredba;
+	utjecanje na uvijet naredba;
+}
+
+primjer:
+
+int broj = 4;
+
+void Start()
+{
+	while(broj > 0)
+	{
+		Debug.Log("Broj je: " + broj);
+		broj--;
+	}
+}
+
+KAKO NE KORISTITI WHILE PETLJU!
+
+...
+void Update()
+{
+	while(gameOver == false)
+	{
+		if(spawned == false)
+		{
+			//Učini nešto
+		}
+		else if(timer >= 2.0f)
+		{
+			//Učini nešto
+		}
+		else
+		{
+			timer += Time.deltaTime;
+		}
+	}
+}
+...
+
+
+NOVO 
+
+// - označavaj početak pisanja komentara u jednu liniju koda
+npr. //Metoda ispod služi za pružanja inforamcija o playerovom healthu
+
+PISANJE VLASTITIH METODA:
+
+Kako napisati vlastitu metodu:
+
+void NazivMetode(Unosne vrijednosti)
+{
+	Naredba;
+}
+
+Primjer vlastite metode:
+
+void GameOver()
+{
+	Application.Quit(); // naredba koja gasi aplikaciju/igru
+}
+
+Korištenje vlastite metode:
+
+int health = 100;
+
+void Update()
+{
+	if(health >= 0)
+	{
+		health -= 0.01f;
+	}
+	else
+	{
+		GameOver();
+	}	
+}
+void GameOver()
+{
+	Application.Quit(); // naredba koja gasi aplikaciju/igru
+}
+
+
+Zadatak 1. Napravite svoju metodu koja će ispisati u konzoli "Game over"
+
+void Smrt()
+{
+	Debug.Log("Game over");
+}
+
+zadatak 2. napravite svoju metodu koja u konzoli ispisuje da je prošlo 60 frameova. Neka se metoda zove FrameCounter i neka se poziva u Update metodi
+
+int frameCounter = 0;
+
+void FrameCounter()
+{
+	if(frameCounter == 60)
+	{
+		Debug.Log("Prošlo je 60");
+		frameCounter = 0;
+	}
+}
+
+void Update()
+{
+	frameCounter++;
+	FrameCounter();
+}
+
+_____DRUGI NAČIN________
+
+int f_count;
+
+void Update()
+{
+	f_count++;
+	if(f_count == 60)
+	{
+		FrameCounter();
+		f_count = 0;
+	}
+}
+
+void FrameCounter()
+{
+	Debug.Log("Prošlo je 60");
+}
+
+Zadatak 3. Napišite for petlju koja ispisuje u konzoli odbrojavanje (npr. 10. 9. 8. ...), ali kreće od početne javne vrijednosti, te ne smije pasti ispod 0 (Zadnji broj odbrojani treba biti 0.)
+
+public int x;
+
+void Start()
+{
+	for(int i = x; i >= 0; i--)
+	{
+		Debug.Log(i + ".");
+	}
+}
+
+//Inkrement dio se izvršava tek kada se sve naredbe u for petlji dogode
+
+Zadatak 4. Napišite while petlju koja je istinita dok god je int x veće ili jednako od 0. U while petlji treba biti naredba koja x smanjuje za 2, te ispisuje u konzoli ispisuje '"Ja volim " + x '
+
+public int x;
+
+void Start()
+{
+	while(x >= 0)
+	{
+		x -= 2;
+		Debug.Log("Ja volim " + x);
+	}
+}
+
+Zadatak 5. Vrijednost x je javna, dok je vrijednost y = 10, oduzmite od x y, te ako je rezultat negativan neka se ispiše "Negativno", ako je veći neka ispiše "Pozivtino", a ako je rezultat 0 neka ispiše "Neutral".
+
+public int x;
+int y = 10;
+
+void Start()
+{
+	var z = x - y;
+
+	//Unutar metoda smijemo definirati varijable, ali ih onda možemo koristiti samo kroz tu metodu, šta to konkretno znači, to znači da varijablu "z" ne možete koristiti niti u Updateu niti u Awakeu niti u nekoj vašoj vlastitoj metodi
+	if(z > 0)
+	{
+		Debug.Log("Pozitivno");
+	}
+	else if(z < 0)
+	{
+		Debug.Log("Negativno");
+	}
+	else
+	{
+		Debug.Log("Neutral");
+	}
+}
 
 
 
