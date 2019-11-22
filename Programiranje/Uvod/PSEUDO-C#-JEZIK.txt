@@ -969,7 +969,31 @@ void Start()
 	Debug.Log("Ja sam " + ime + " " + prezime + ". Imam " + godine + " godina, te sam visok " + visina + " cm i dolazim iz " + grad + "!");
 }
 
+Nastavak vježbe stringovi:
 
+Zadatak 1. Napišite kod koji učitava iz inspectora javne vrijednosti podataka, te ispisuje navedeni tekst "Moje ime je _____ dolazim iz grada koji se zove _______, a višlji sam od čovjeka koji se zove ______ za ____ cm" to znači da morate imati u kodu učitavanje 2 vrijednosti imena, 2 vrijednosti visine i 2 vrijednosti grada, te dvije solucije teksta ovisno o tome koji lik je zapisan kao višlji.
+
+public string ime1;
+public string ime2;
+public int visina1;
+public int visina2;
+public string grad1;
+public string grad2;
+
+void Start()
+{
+	if(visina1 > visina2)
+	{
+		int razlika = visina1 - visina2;
+		Debug.Log("Moje ime je " + ime1 + " dolazim iz grada koji se zove " + grad1 + ", a višlji sam od čovjeka koji se zove " + ime2 + " za " + razlika + " cm");
+	}
+	
+	else if(visina2 > visina1)
+	{
+		int razlika = visina2 - visina1;
+		Debug.Log("Moje ime je " + ime2 + " dolazim iz grada koji se zove " + grad2 + ", a višlji sam od čovjeka koji se zove " + ime1 + " za " + razlika + " cm");
+	}
+}
 
 
 
