@@ -32,5 +32,9 @@ public class Scaling : MonoBehaviour
         transform.Rotate(Vector3.up * yRotate);
         transform.Rotate(Vector3.right * xRotate);
         transform.Rotate(Vector3.forward * zRotate);
+
+        //KADA RADIMO SA 1 sekundom množimo sa Time.deltaTime
+        //DOLJNJA LINIJA RADI DA SE OBJEKT ROTIRA ZA 1° ZA SVAKIH 1 SEKUNDU
+        transform.Rotate(Vector3.up * Time.deltaTime);
     }
 }
