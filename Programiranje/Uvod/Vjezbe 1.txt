@@ -1,0 +1,13 @@
+VJEŽBA 1.
+1. zadatak: Što je MonoBehaviour? 
+
+2. zadatak: Napišite skriptu koja će imati Debug na:     
+a. Awake 
+b. Start 
+c. Update (update dio teksta u boji) 
+
+3. zadatak: Množenje 2 javna broja. Oba trebaju biti vidljiva u inspectoru, a rezultat treba pisati u Consoli preko Debug-a. Dva broja se množe u Update-u. Prvi javni broj se u updateu povecava za 0.11
+
+4. Skripta	u	kojoj	se	zbrajaju	2	cijela	broja.	Oba	broja	trebaju	se	vidjeti	u	Inspectoru,	te	rezultat	treba	biti	vidljiv	u	inspectoru.	Zbrajanje	je	u	Start-u.	
+
+5. Množenje	2	javna	broja.	Oba	trebaju	biti	vidljiva	u	inspectoru,	a	rezultat	treba	pisati	u	Consoli	preko	Debug-a.	Dva	broja	se	množe	u	Update-u. 

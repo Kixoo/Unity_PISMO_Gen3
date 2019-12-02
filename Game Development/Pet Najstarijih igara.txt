@@ -1,0 +1,16 @@
+PET NAJSTARIJIH I NAJKLJUČNIJIH IGARA
+TEMELJI SVIH VIDEO IGARA
+
+- Šah:
+	- MOBA - Polja, svaki lik svoje moći
+	- Strateške igre - Slaganje vojske, trupa, baze
+	- Shooter - Različine jačine neprijatelja, različite mogućnosti oružja
+- Memori:
+	- Storydriven game - Pamćenje gdje je koji item, otkrivanje klikanjem, traženje vizuala
+	- Point & Click - Pamćenje gdje je koji item, otkrivanje klikanjem, traženje vizuala
+- GO:
+	- Strateške igre - Okružiti enemya, nadjačati ga
+- Domino / Mahjong:
+	- Hypercasual - Sam igraš, jedan prst
+	- Tower Defense - Buildanje, upgreadanje (nadograđivanje), slaganje
+- Senet:
