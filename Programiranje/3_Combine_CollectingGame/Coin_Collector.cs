@@ -15,11 +15,16 @@ public class Coin_Collector : MonoBehaviour
     public AudioSource zvuk;
 
     int brojCoinsaNaSceni;
+    int brojArtifekataNaSceni;
 
     void Start()
     {
+        //Traženje objekata na sceni sa tagom "Collectable" i zapisivanje koliko ih ima brojčano (Lenght)
         brojCoinsaNaSceni = GameObject.FindGameObjectsWithTag("Collectable").Length;
+        //Pisanje texta na UI => 0/3
         textCoins.text = skupljeni_Coinsi + "/" + brojCoinsaNaSceni;
+        brojCoinsaNaSceni = GameObject.FindGameObjectsWithTag("Artifact").Length;
+        textArtifakti.text = skupljeni_Artifakti + "/" + brojArtifekataNaSceni;
     }
 
     void OnTriggerEnter(Collider other)
@@ -36,7 +41,18 @@ public class Coin_Collector : MonoBehaviour
         {
             Destroy(other.gameObject);
             skupljeni_Artifakti++;
+            textCoins.text = skupljeni_Artifakti + "/" + brojArtifekataNaSceni;
             zvuk.Play();
+        }
+    }
+
+    void Update()
+    {
+        //Što da se dogodi kada pokupimo sve coinse i artifekte
+        if(skupljeni_Coinsi == brojCoinsaNaSceni && skupljeni_Artifakti == brojArtifekataNaSceni)
+        {
+            //Application.Quit ne radi u Unity nego tek u buildanom proizvodu
+            Application.Quit(); //exe. file se ugasi
         }
     }
 }
