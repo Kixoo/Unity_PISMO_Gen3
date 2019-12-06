@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FPSCntroller : MonoBehaviour
+{
+    public int speed;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            transform.localPosition += new Vector3(0f, 0f, speed);
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            transform.localPosition += new Vector3(-speed, 0f, 0f);
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            transform.localPosition += new Vector3(0f, 0f, -speed);
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            transform.localPosition += new Vector3(speed, 0f, 0f);
+        }
+    }
+}

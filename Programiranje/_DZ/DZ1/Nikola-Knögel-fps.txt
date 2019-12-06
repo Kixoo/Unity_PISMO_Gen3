@@ -1,0 +1,76 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class fps_con : MonoBehaviour
+{
+
+    
+    public float brzinaTrcanja; //Brzina kojom igrac trci
+    public float brzina; //Stvarna brzina
+    public float skok; //Koliko visoko igrac moze skociti
+    public float cucnuti; //Koliko se spusti igrac kada cucne
+
+    void Update()
+    {
+        pokret();
+    }
+
+    //Funkcija za kretanje igraca
+    private void pokret()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += new Vector3(0, 0, brzina * Time.deltaTime); //pritiskom tipke W igrac ide naprijed
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            transform.position += new Vector3(0, 0, -brzina * Time.deltaTime); //Pritiskom tipkre S igrac ide nazad
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += new Vector3(-brzina * Time.deltaTime, 0, 0); //Pritiskom tipke A igrac ide lijevo
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += new Vector3(brzina * Time.deltaTime, 0, 0); //pritiskom tipke D igrac ide desno
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.position += new Vector3(0, skok * Time.deltaTime, 0); //pritiskom tipke space igrac skace
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Ctrl))
+        {
+            transform.position += new Vector3(0, -cucnuti * Time.deltaTime, 0); //pritiskom tipke ctrl igrac cucne
+        }
+        else if(Input.GetKeydown(Keycode.Shift))//pritiskom tipke shift igrac trci
+        {
+            trcanje();
+        }
+        void trcanje() //funkcija za trcanje
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.position += new Vector3(0, 0, brzinaTrcanja * Time.deltaTime); 
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                transform.position += new Vector3(0, 0,brzinaTrcanja * Time.deltaTime); 
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                transform.position += new Vector3(-brzinaTrcanja * Time.deltaTime, 0, 0); 
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                transform.position += new Vector3(brzinaTrcanja* Time.deltaTime, 0, 0); 
+            }
+        }
+    }
+
+
+
+
+
+
