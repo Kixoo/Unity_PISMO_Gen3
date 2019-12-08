@@ -1,0 +1,38 @@
+Iskomentirajte skripte u jednom od navedenih projekata.
+Nije potrebno svaku liniju koda iskomentirati, već ono što je bitno, npr cemu koja metoda služi, ako je nešto specigfično cemu ta linija sluzi, cemu koja skripta u cijelini sluzi itd.
+
+*Napomena: neki projekti su za starije verzije unity-a pa pazite, ako dobijete u vašoj crveni error koji ne možete fixati, izaberite drugi projekt
+
+Projekti:
+
+Endless Runner - Sample Game
+
+https://www.assetstore.unity3d.com/en/?stay#!/content/87901
+
+Adventure - Sample Game
+
+https://www.assetstore.unity3d.com/en/?stay#!/content/76216
+
+Tower Defense Template
+
+https://www.assetstore.unity3d.com/en/?stay#!/content/107692
+
+Flappy Bird Style Example Game
+
+https://www.assetstore.unity3d.com/en/?stay#!/content/80330
+
+FPS Microgame
+
+https://www.assetstore.unity3d.com/en/?stay#!/content/156015
+
+Karting Microgame
+
+https://www.assetstore.unity3d.com/en/?stay#!/content/150956
+
+Creator Kit: FPS
+
+https://www.assetstore.unity3d.com/en/?stay#!/content/149310
+
+Creator Kit: RPG
+
+https://www.assetstore.unity3d.com/en/?stay#!/content/149309
