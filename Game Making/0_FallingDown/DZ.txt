@@ -1,0 +1,7 @@
+1. napravite da se više ne može igrati kada padne health na 0
+
+2. Napravite glavni izbornik sa play i quit gumbima, te kada izgubite da budu restart i quit gumbi
+
+3. Napravite bodovanje po težini igre, ako je easy po pokupljenom 1 bod, ako je normal po pokupljenom 2 boda, ali ako je hard po pokupljenom objektu 3 bodova.
+
+4. Isprobajte riješiti ne prolaženje kroz zid (ima veze sa collision detectonom)
