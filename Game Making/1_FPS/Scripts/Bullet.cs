@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
         if(coll.gameObject.tag != "Gun" || coll.gameObject.tag != "Bullet" || coll.gameObject.tag != "Player" ||coll.gameObject.tag != "MainCamera")
         {
             var reducehealth = coll.GetComponent<Health>();
-            //Skini health za damage
+            reducehealth.health_Current -= damage;
             Destroy(this.gameObject);
         }
     }
