@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FPSController : MonoBehaviour
+{
+    public float walking;
+    public float running;
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += new Vector3(0, 0, walking);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += new Vector3(-walking, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position += new Vector3(0, 0, -walking);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += new Vector3(walking, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            walking = running;
+        }
+    }
+}
