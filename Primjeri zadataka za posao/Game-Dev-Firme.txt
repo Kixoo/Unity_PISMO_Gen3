@@ -1,0 +1,42 @@
+﻿CroTeam - SeriousSam Engine (C++)
+Nanobit - Unity 
+Gamepirates - Unreal (C++)
+Little Green Man (Intercorrona) - Unity
+IronWard - Unity
+2X2 - Unity
+Cateia Games - Unity
+Red Martyr Entertainment - (Unity ili GameMaker)
+Binx Interactive - Unity
+Exordium Games - Unity
+Pine Studio - Unity
+Void Main Studio - Unity (ne zapošljavaju)
+Somnium Games - Nepoznat engine
+Soap Interactive - Unity i GameMaker
+Games Revolted - Unity
+Studio Spectar - GameMaker i Constract
+GameChuck - Godot
+GD Entertainment - Unity
+Delta Reality - Unity
+Pixel Cabaret - Unity (ne zapošljavaju)
+Fearem - Unity (ne zapošljavaju)
+Brojka Produkcija - Unity (definitino ne zapošljavaju)
+Camel 101 - Nepoznat engine (ne zapošljavaju)
+Mad Head Games - Vlastiti engine (C++)
+_______________________________________________________________________________________________________
+
+PISMO INKUBATOR firme:
+Lucky Games and Entertainment - Unity
+GameChuck - Godot
+Flamboyant Entertainment - Unity
+Archin - Blender
+Byte Mind - Unity
+Dot M - Blender
+InnaArt - Blender, TwinMotion
+Made Up - Blender
+Nexus Games - Unity
+Nova Motion - Blender
+Reality Games - Unity (VR)
+TexLab 3D - Blender
+Vertex - Blender
+Virtual Ant - Unity, Blender, ZBrush
+Dodo Games - Unity
