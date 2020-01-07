@@ -1,0 +1,5 @@
+Napravite rekonstrukciju (klona) video igre "Space race" 1973 atari.
+Lijevi igrač se upravlja pomoću W i S za naprijed i nazad,
+a desni igrač pomoću strelica gore i dolje za naprijed i nazad.
+Umjesto raketa koristite Kapsulu i Cilindar, a objekti koji dolaze neka budu sphere.
+Kad objekt dođe do kraja povećajte mu score, ali ga nemojte uništiti, nego ga resetirajte na pocetnu poziciju.
