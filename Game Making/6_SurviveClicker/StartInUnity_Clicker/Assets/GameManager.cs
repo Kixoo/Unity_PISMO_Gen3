@@ -12,12 +12,14 @@ public class GameManager : MonoBehaviour
     public Text GameOverText;
     public Text Days;
     public Text Disaster;
+    public Text CityRank;
 
     int wood = 10;
     public int food = 100;
     int gold = 15;
     int population = 100;
     int days = 1;
+    int cityRank = 0;
 
     int minDana = 20;
     int maxDana = 70;
@@ -60,6 +62,7 @@ public class GameManager : MonoBehaviour
             WoodText.text = "Wood: " + wood;
             days++;
             Days.text = "Days: " + days;
+            UpdateCityRank();
         }
     }
 
@@ -159,6 +162,91 @@ public class GameManager : MonoBehaviour
     //    yield return new WaitForSeconds(5);
     //    Disaster.text = "";
     //}
+
+    //CITY NAMES
+
+    void UpdateCityRank()
+    {
+        if(population < 100)
+        {
+            cityRank = 0;
+        }
+        else if(population < 500)
+        {
+            cityRank = 1;
+        }
+        else if (population < 1000)
+        {
+            cityRank = 2;
+        }
+        else if (population < 10000)
+        {
+            cityRank = 3;
+        }
+        else if (population < 100000)
+        {
+            cityRank = 4;
+        }
+        else if (population < 300000)
+        {
+            cityRank = 5;
+        }
+        else if (population < 1000000)
+        {
+            cityRank = 6;
+        }
+        else if (population < 3000000)
+        {
+            cityRank = 7;
+        }
+        else if (population < 10000000)
+        {
+            cityRank = 8;
+        }
+        else if (population > 10000000)
+        {
+            cityRank = 9;
+        }
+
+        UpdateCityRank_HierarchyName();
+    }
+
+    void UpdateCityRank_HierarchyName()
+    {
+        switch(cityRank)
+        {
+            case 0:
+                CityRank.text = "Hamlet";
+                break;
+            case 1:
+                CityRank.text = "Tribe";
+                break;
+            case 2:
+                CityRank.text = "Village";
+                break;
+            case 3:
+                CityRank.text = "Town";
+                break;
+            case 4:
+                CityRank.text = "Large Town";
+                break;
+            case 5:
+                CityRank.text = "Borough";
+                break;
+            case 6:
+                CityRank.text = "City";
+                break;
+            case 7:
+                CityRank.text = "Metropolis";
+                break;
+            case 8:
+                CityRank.text = "Conurbation";
+                break;
+            case 9:
+                CityRank.text = "Megalopolis";
+                break;
+        }
+    }
 
 
     // BUTTONI
