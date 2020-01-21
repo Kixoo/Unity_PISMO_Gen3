@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +29,17 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        IsGameLoaded isGameLoaded = FindObjectOfType<IsGameLoaded>();
+        if(isGameLoaded.GameLoaded == true)
+        {
+            wood = GameSaveData.highestWood;
+            food = GameSaveData.highestFood;
+            days = GameSaveData.highestDay;
+            population = GameSaveData.highestPopulation;
+            Disaster.text = GameSaveData.allNews;
+            gold = GameSaveData.highestGold;
+            cityRank = GameSaveData.highestRank;
+        }
 
         WoodText.text = "Wood: " + wood;
         FoodText.text = "Food: " + food;
@@ -41,6 +53,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(GoldIncrease());
         StartCoroutine(PopulationIncrease());
         StartCoroutine(Chaos());
+        UpdateCityRank();
     }
 
     private void Update()
@@ -248,7 +261,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     // BUTTONI
 
     public void SellWood()
@@ -348,4 +360,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SaveMyGame()
+    {
+        PlayerPrefs.SetInt("population", population);
+        PlayerPrefs.SetInt("gold", gold);
+        PlayerPrefs.SetInt("wood", wood);
+        PlayerPrefs.SetInt("dan", days);
+        PlayerPrefs.SetInt("hrana", food);
+        PlayerPrefs.SetInt("rankNaselja", cityRank);
+        PlayerPrefs.SetString("vesti", Disaster.text);
+    }
+
+    public void ReturnMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
 }
