@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     //public Scene gameScene;
+    public Text welcomeText;
+
+    public Button loadGame;
 
     public GameObject loadPopup;
 
@@ -14,7 +17,15 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        gameLoaded = FindObjectOfType<IsGameLoaded>();
         loadPopup.SetActive(false);
+        welcomeText.text = "WELCOME " + GameSaveData.lastUsername;
+
+        //Ako nemamo save file sa tim user imenom više igrano od 2 dana onda onesposobimo load game button
+        if(PlayerPrefs.GetInt("dan" + GameSaveData.lastUsername) < 2)
+        {
+            loadGame.interactable = false;
+        }
     }
 
     public void LoadExistingFile()
@@ -38,6 +49,7 @@ public class MainMenu : MonoBehaviour
     {
         //SceneManager.LoadScene(gameScene.name);
         //SceneManager.LoadScene(1);
+        gameLoaded.GameLoaded = false;
 
         loadPopup.SetActive(true);
 
@@ -58,7 +70,7 @@ public class MainMenu : MonoBehaviour
         Text loadText = loadPopup.GetComponentInChildren<Text>();
         loadText.color = new Color(loadText.color.r, loadText.color.g, loadText.color.b, Mathf.PingPong(Time.time, 1));
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(2);
 
         while(!asyncLoad.isDone)
         {

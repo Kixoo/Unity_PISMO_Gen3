@@ -32,13 +32,13 @@ public class GameManager : MonoBehaviour
         IsGameLoaded isGameLoaded = FindObjectOfType<IsGameLoaded>();
         if(isGameLoaded.GameLoaded == true)
         {
-            wood = GameSaveData.highestWood;
-            food = GameSaveData.highestFood;
-            days = GameSaveData.highestDay;
-            population = GameSaveData.highestPopulation;
-            Disaster.text = GameSaveData.allNews;
-            gold = GameSaveData.highestGold;
-            cityRank = GameSaveData.highestRank;
+            wood = PlayerPrefs.GetInt("wood" + GameSaveData.lastUsername);
+            food = PlayerPrefs.GetInt("food" + GameSaveData.lastUsername);
+            days = PlayerPrefs.GetInt("dan" + GameSaveData.lastUsername);
+            population = PlayerPrefs.GetInt("population" + GameSaveData.lastUsername);
+            Disaster.text = PlayerPrefs.GetString("vesti" + GameSaveData.lastUsername);
+            gold = PlayerPrefs.GetInt("toZla" + GameSaveData.lastUsername);
+            cityRank = PlayerPrefs.GetInt("rankNaselja" + GameSaveData.lastUsername);
         }
 
         WoodText.text = "Wood: " + wood;
@@ -362,13 +362,13 @@ public class GameManager : MonoBehaviour
 
     public void SaveMyGame()
     {
-        PlayerPrefs.SetInt("population", population);
-        PlayerPrefs.SetInt("gold", gold);
-        PlayerPrefs.SetInt("wood", wood);
-        PlayerPrefs.SetInt("dan", days);
-        PlayerPrefs.SetInt("hrana", food);
-        PlayerPrefs.SetInt("rankNaselja", cityRank);
-        PlayerPrefs.SetString("vesti", Disaster.text);
+        PlayerPrefs.SetInt("population" + GameSaveData.lastUsername, population);
+        PlayerPrefs.SetInt("gold" + GameSaveData.lastUsername, gold);
+        PlayerPrefs.SetInt("wood" + GameSaveData.lastUsername, wood);
+        PlayerPrefs.SetInt("dan" + GameSaveData.lastUsername, days);
+        PlayerPrefs.SetInt("hrana" + GameSaveData.lastUsername, food);
+        PlayerPrefs.SetInt("rankNaselja" + GameSaveData.lastUsername, cityRank);
+        PlayerPrefs.SetString("vesti"+ GameSaveData.lastUsername, Disaster.text);
     }
 
     public void ReturnMenu()
