@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CharacterController : MonoBehaviour
+{
+    [SerializeField]
+    float speed;
+    float horizontal;
+    float vertical;
+
+
+    private void Update()
+    {
+        horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        transform.Translate(horizontal, 0, vertical);
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+
+            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+    }
+
+    public Vector3 jump;
+    public float jumpForce = 3.7f;
+
+    public bool isGrounded;
+    Rigidbody rb;
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        jump = new Vector3(0.0f, 2.0f, 0.0f);
+    }
+
+    void OnCollisionStay()
+    {
+        isGrounded = true;
+    }
+
+}
