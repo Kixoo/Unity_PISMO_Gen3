@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f2766d915aaa54bb93fe719f0f30d9, type: 3}
+  m_Name: Today we know them as Rockstar San Diego. What was the name of their previous
+    company before Take Two acquired them [Angel Studios]
+  m_EditorClassIdentifier: 
+  question: Today we know them as Rockstar San Diego. What was the name of their previous
+    company before Take Two acquired them?
+  answers:
+  - Bizzare Creation
+  - Angel Studios
+  - Radical Entertainment
+  - Empire Interactive
+  correctAnswer: 1
